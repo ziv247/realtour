@@ -1,13 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="initial commit and push">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prepros-6.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/apartment/apartment_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/_new_york.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/_tel_aviv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/babruysk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/bacău.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/barcelona.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/beatles.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/berlin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/chicago.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/dublin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/hong_Kong.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/liverpool.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/london.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/madrid.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/mexico_city.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/moscow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/new_delhi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/new_york.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/page_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/paris.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/paris.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/rio_de_janeiro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/rio_de_janeiro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/roma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/roma.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/sau_paulo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/sidney.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/tel_aviv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/cities/tokyo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app_data/apatments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app_data/cities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/card.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/logo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Sxqeges7vV8goywJtZHxKLBkH8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\header" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -23,5 +139,45 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="" />
+      <created>1572515691598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572515691598</updated>
+      <workItem from="1572515693253" duration="11808000" />
+    </task>
+    <task id="LOCAL‎00001" summary="initial commit and push">
+      <created>1572515830202</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1572515830202</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial commit and push" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit and push" />
   </component>
 </project>

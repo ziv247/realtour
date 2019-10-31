@@ -1,0 +1,15 @@
+.header {
+  border-bottom: 1px solid #c4c4c4;
+  height: 50px;
+  text-align: center;
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 10px; }
+  .header .navbar-brand {
+    padding: 0; }
+  .header .nav-link {
+    border-left: none;
+    border-bottom: 3px solid transparent; }
+    .header .nav-link:hover {
+      color: red;
+      border-color: red; }
