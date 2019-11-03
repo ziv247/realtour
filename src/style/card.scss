@@ -1,5 +1,5 @@
 .card-img-top {
-  height: 40vh;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -24,9 +24,7 @@
   margin-right: 2px;
 }
 
-.card-img-top {
-  max-height: 400px;
-}
+
 
 .cardWrap {
   padding: 0 8px;
@@ -59,4 +57,6 @@
 
 .cardImageWrap {
   position: relative;
+  height: 35vh;
+  overflow: hidden;
 }

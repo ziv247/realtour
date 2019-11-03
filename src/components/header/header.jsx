@@ -1,44 +1,40 @@
 import React from 'react';
 import Logo from "./logo";
 import "./header.css"
+import {Container, Nav, Navbar} from "react-bootstrap";
+import NavbarContent from "./navbarContent";
+import {headerData} from '../../app_data/headerData';
 import NavbarItem from "./NavbarItem";
+
+
 
 class Header extends React.Component{
     render() {
         return(
             <div className={'header'}>
-                <nav className="navbar navbar-expand-lg navbar-light">
+                <Navbar expand="lg">
+                    <Container>
+
+                    <Navbar.Brand href="#home"><Logo/></Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                            {headerData.map((item,i)=><NavbarItem item={item} key={i}/>)}
+                        </Nav>
+                        <Nav className="ml-auto">
+                            <Nav.Link href="#home"><i className="fas fa-mobile-alt d-flex align-items-center"/></Nav.Link>
+                            <Nav.Link  href="#link">Ziv</Nav.Link>
+                            <div className={'divider'}/>
+                            <Nav.Link href="#link" className={"adv"}>Advertise</Nav.Link>
+                        </Nav>
+
+                    </Navbar.Collapse>
+                    </Container>
 
 
-                    <a className="navbar-brand" href="#"><Logo/></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"/>
-                    </button>
+                </Navbar>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <NavbarItem title={'Buy'}/>
-                            </li>
-                            <li className="nav-item">
-                                <NavbarItem title={'Sell'}/>
-                            </li>
-                            <li className="nav-item ">
-                                <NavbarItem title={'Rent'}/>
-                            </li>
-                            <li className="nav-item">
-                                <NavbarItem title={'Mortgage'}/>
-                            </li>
-                        </ul>
-                        {/*<form className="form-inline my-2 my-lg-0">*/}
-                        {/*    <input className="form-control mr-sm-2" type="search" placeholder="Search"*/}
-                        {/*           aria-label="Search">*/}
-                        {/*        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>*/}
-                        {/*    </form>*/}
-                    </div>
-                </nav>
+                {/*<NavbarContent />*/}
             </div>
         )
     }
