@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from "./logo";
 import "./header.css"
 import {Container, Nav, Navbar} from "react-bootstrap";
-import NavbarContent from "./navbarContent";
 import {headerData} from '../../app_data/headerData';
 import NavbarItem from "./NavbarItem";
 
@@ -11,7 +10,7 @@ import NavbarItem from "./NavbarItem";
 class Header extends React.Component{
     render() {
         return(
-            <div className={'header'}>
+            <div className={'header'} id={'header'}>
                 <Navbar expand="lg">
                     <Container>
 

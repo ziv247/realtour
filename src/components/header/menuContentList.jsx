@@ -9,8 +9,9 @@ export default class MenuContentList extends Component{
             <Col>
                 <h4>{item.title}</h4>
                 <ul className={'menuList'}>
-                    {item.menuContent.map((link,i)=><li key={i}><a href={link.herfLink}>{link.title}</a></li>)}
-
+                    <span>
+                        {item.menuContent.map((link,i)=><li key={i}><a href={link.herfLink}>{link.title}</a></li>)}
+                    </span>
                 </ul>
             </Col>
         )

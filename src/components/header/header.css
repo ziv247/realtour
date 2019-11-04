@@ -10,8 +10,7 @@ body {
   border-bottom: 1px solid #c4c4c4;
   text-align: center;
   font-size: 1em;
-  margin-bottom: 10px;
-  height: 50px; }
+  margin-bottom: 10px; }
   .header .navbar {
     padding: 0; }
     .header .navbar-brand {
@@ -39,11 +38,10 @@ body {
     display: -ms-flexbox;
     display: flex; }
   .header .navbar-content {
-    line-height: 1.4;
+    line-height: 1.9;
     text-align: left;
     position: absolute;
     width: 100%;
-    top: 50px;
     left: 0;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
@@ -51,7 +49,23 @@ body {
     border-top: none;
     z-index: 1039;
     padding-top: 2em;
-    padding-bottom: 2em; }
+    padding-bottom: 2em;
+    -webkit-animation: popDown 1s;
+    animation: popDown 1s; }
+    .header .navbar-content ul {
+      padding: 3px; }
+
+@-webkit-keyframes popDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes popDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .divider {
   border-left: 1px solid #c8c8c8;

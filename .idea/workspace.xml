@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="start build nav menu">
-      <change afterPath="$PROJECT_DIR$/src/app_data/headerData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/menuContentList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/navbarContent.jsx" afterDir="false" />
+    <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/menuContentList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/menuContentList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/navbarContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navbarContent.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,10 +37,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -98,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572515691598</updated>
       <workItem from="1572515693253" duration="15352000" />
-      <workItem from="1572599622425" duration="28540000" />
+      <workItem from="1572599622425" duration="41304000" />
     </task>
     <task id="LOCAL‎00001" summary="initial commit and push">
       <created>1572515830202</created>
@@ -112,7 +107,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1572532950706</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary=" build nav menu">
+      <created>1572806710384</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1572806710384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +137,7 @@
     <MESSAGE value="initial commit and push" />
     <MESSAGE value="start build navbar" />
     <MESSAGE value="start build nav menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="start build nav menu" />
+    <MESSAGE value=" build nav menu" />
+    <option name="LAST_COMMIT_MESSAGE" value=" build nav menu" />
   </component>
 </project>
