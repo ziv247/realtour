@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/menuContentList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/menuContentList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/navbarContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/navbarContent.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery\searchBar" />
+      <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\header" />
     </key>
   </component>
@@ -93,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572515691598</updated>
       <workItem from="1572515693253" duration="15352000" />
-      <workItem from="1572599622425" duration="41304000" />
+      <workItem from="1572599622425" duration="82113000" />
     </task>
     <task id="LOCAL‎00001" summary="initial commit and push">
       <created>1572515830202</created>
@@ -113,7 +119,13 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1572806710384</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="Navbar - Done!">
+      <created>1572874706698</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1572874706698</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +150,7 @@
     <MESSAGE value="start build navbar" />
     <MESSAGE value="start build nav menu" />
     <MESSAGE value=" build nav menu" />
-    <option name="LAST_COMMIT_MESSAGE" value=" build nav menu" />
+    <MESSAGE value="Navbar - Done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navbar - Done!" />
   </component>
 </project>

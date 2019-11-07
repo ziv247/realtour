@@ -9,8 +9,7 @@ body {
 .header {
   border-bottom: 1px solid #c4c4c4;
   text-align: center;
-  font-size: 1em;
-  margin-bottom: 10px; }
+  font-size: 1em; }
   .header .navbar {
     padding: 0; }
     .header .navbar-brand {

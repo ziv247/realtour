@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Gallery from "./components/gallery";
+import Gallery from "./components/gallery/gallery";
 import Header from "./components/header/header";
 // import {cities} from "./app_data/cities";
 
