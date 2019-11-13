@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/cardStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/numberFormatter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app_data/apatments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_data/apatments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app_data/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_data/cities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,13 +29,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1Sxqeges7vV8goywJtZHxKLBkH8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -99,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572515691598</updated>
       <workItem from="1572515693253" duration="15352000" />
-      <workItem from="1572599622425" duration="82113000" />
+      <workItem from="1572599622425" duration="117558000" />
     </task>
     <task id="LOCAL‎00001" summary="initial commit and push">
       <created>1572515830202</created>
@@ -125,7 +137,13 @@
       <option name="presentableId" value="LOCAL‎00004" />
       <updated>1572874706698</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎00005" summary="SearchBar - price - done">
+      <created>1573138295917</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1573138295917</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +169,19 @@
     <MESSAGE value="start build nav menu" />
     <MESSAGE value=" build nav menu" />
     <MESSAGE value="Navbar - Done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navbar - Done!" />
+    <MESSAGE value="SearchBar - price - done" />
+    <option name="LAST_COMMIT_MESSAGE" value="SearchBar - price - done" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx</url>
+          <line>84</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

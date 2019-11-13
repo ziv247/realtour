@@ -1,0 +1,19 @@
+.radio{
+  padding: 0!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px!important;
+  height: 48px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  &:hover{
+    color: red;
+    border-color: red;
+  }
+}
+.checked{
+  color: red!important;
+  border-color: red!important;
+}

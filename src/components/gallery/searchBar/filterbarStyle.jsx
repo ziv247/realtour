@@ -7,6 +7,7 @@ const SearchBtn = styled.button`
         border-color: #d92228;
         padding: 6px 12px;
         border-style: solid;
+        
 `;
 
 const SearchInput = {
@@ -55,6 +56,7 @@ const PriceLi = styled.li`
         color: red!important;
         }
 `;
+
 
 
 export {SearchBtn,SearchInput,Dollar,DropdownHeader,dash,PriceUl,PriceLi};

@@ -7,7 +7,7 @@ var cities = [
     { id: 6, label: 'London', name: 'london', description: 'Wonderful city', country: 'United Kingdom', image: "images/cities/london.jpg" },
     { id: 7, label: 'Liverpool', name: 'liverpool', description: 'Wonderful city', country: 'United Kingdom', image: "images/cities/liverpool.jpg" },
     { id: 8, label: 'Babruysk', name: 'babruysk', description: 'Wonderful city', country: 'Belarus', image: "images/cities/babruysk.jpg" },
-    { id: 9, label: 'Bacău', name: 'bacău', description: 'Wonderful city', country: 'Romania', image: "images/cities/bacău.jpg" },
+    { id: 9, label: 'Bacau', name: 'bacău', description: 'Wonderful city', country: 'Romania', image: "images/cities/bacău.jpg" },
     { id: 10, label: 'Dublin', name: 'dublin', description: 'Wonderful city', country: 'Irland', image: "images/cities/dublin.jpg" },
     { id: 11, label: 'Chicago', name: 'chicago', description: 'Wonderful city', country: 'United State', image: "images/cities/chicago.jpg" },
     { id: 12, label: 'Rio de Janeiro', name: 'rio_de_janeiro', description: 'Wonderful city', country: 'Brazil', image: "images/cities/rio_de_janeiro.png" },

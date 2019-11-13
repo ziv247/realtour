@@ -16,7 +16,7 @@ export default class NavbarItem extends Component{
         const {item} = this.props;
         const {show} = this.state;
         return(
-            <Nav.Link href={item.herfLink}
+            <Nav.Link to={item.herfLink}
                       onMouseOver={()=>{this.setState({show:true});}}
                       onMouseOut={()=>{
                           this.setState({show:false})
