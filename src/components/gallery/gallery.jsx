@@ -1,5 +1,4 @@
 import React from 'react';
-import {apartments} from "../../app_data/apatments";
 import Card from "./card";
 import {
     ButtonToolbar,
@@ -10,87 +9,136 @@ import {
     Button
 } from "react-bootstrap";
 import PriceComponent from "./searchBar/priceComponent";
-import {cities} from "../../app_data/cities";
 import RoomsFilter from "./searchBar/rooms";
+import {getDataFromSever} from "../../app_data/servelCall";
 
 
+class Gallery extends React.Component {
 
-class Gallery extends React.Component{
+    constructor(props) {
 
-    constructor(props){
         super(props);
         this.state = {
-            apartmentList:apartments,
-            searchValue:""
+            citiesList: [],
+            apartmentList: [],
+            searchValue: "",
+            price: [0, 0],
+            number_of_beds: [0, 0],
+            number_of_rooms: [0, 0],
+            loading:false
+        };
+        getDataFromSever("apartments", this.handleSuccessApartment);
+        getDataFromSever("cities", this.handleSuccessCities);
+        if (props.location.aboutProps) {
+            console.log("Success: ", props.location.aboutProps)
         }
     }
 
+    handleSuccessApartment = (apartments) => {
+        this.setState({apartmentList: apartments});
+    };
+
+    handleSuccessCities = (cities) => {
+        this.setState({citiesList: cities,loading:true});
+    };
+
+componentDidMount() {
+    const {match:{params}} = this.props;
+    this.setState({searchValue:params.searchValue})
+    console.log(params);
+}
+
     render() {
-        const {apartmentList} = this.state;
-        return(
+        let {apartmentList, citiesList, searchValue, price, number_of_beds, number_of_rooms} = this.state;
+
+        if (searchValue && this.state.loading ) {
+            let filteredList = [];
+            for (let i = 0; i < this.state.apartmentList.length; i++) {
+                // eslint-disable-next-line no-loop-func
+                // debugger;
+                let city = citiesList.find(c => c.id === apartmentList[i].cityId);
+                city = city.label.toLowerCase();
+                if (apartmentList[i].address.toLocaleLowerCase().includes(searchValue) || city.includes(searchValue)) {
+                    filteredList.push(this.state.apartmentList[i]);
+                }
+            }
+            apartmentList = filteredList;
+        }
+
+        if (price[0] > 0 || price[1] > 0) {
+            apartmentList = this.filterByNumber("price", price, apartmentList);
+        }
+
+        if (number_of_beds[0] > 0 || number_of_beds[1] > 0) {
+            apartmentList = this.filterByNumber("number_of_beds", number_of_beds, apartmentList);
+        }
+
+        if (number_of_rooms[0] > 0 || number_of_rooms[1] > 0) {
+            apartmentList = this.filterByNumber("number_of_rooms", number_of_rooms, apartmentList);
+        }
+
+
+        return (
             <Container fluid={true}>
                 <div>
                     <Form inline>
-                        <InputGroup style={{marginRight:"6px"}}>
+                        <InputGroup style={{marginRight: "6px"}}>
 
                             <FormControl placeholder="Search" id={"search"}/>
                             <InputGroup.Append>
-                                <Button variant="danger" onClick={()=>{this.searchByText()}}><i className="fas fa-search"/></Button>
+                                <Button variant="danger" onClick={() => {
+                                    this.searchByText()
+                                }}><i className="fas fa-search"/></Button>
                             </InputGroup.Append>
                         </InputGroup>
                         <ButtonToolbar>
 
-                            <PriceComponent searchByPrice={this.searchByPrice} />
-                            <RoomsFilter type={'Bed'}/>
-                            <RoomsFilter type={'Bath'}/>
+                            <PriceComponent searchByPrice={this.searchByNumber}/>
+                            <RoomsFilter type={'Bed'} searchByPrice={this.searchByNumber}/>
+                            <RoomsFilter type={'Bath'} searchByPrice={this.searchByNumber}/>
                             {['Property Type', 'More Filters'].map(
                                 variant => (
-                                   <PriceComponent searchByPrice={this.searchByPrice} />
+                                    <PriceComponent searchByPrice={this.searchByNumber} key={variant + 1}/>
                                 ),
                             )}
                         </ButtonToolbar>
                     </Form>
                 </div>
                 <div className={'row'}>
-                    {apartmentList.map((item,i)=><Card item={item} key={i}/>)}
-               </div>
+                    {apartmentList.map((item, i) => <Card item={item} key={i}/>)}
+                </div>
             </Container>
         )
 
     }
-    searchByPrice= (min,max) =>{
-        let filteredList =[];
 
-        min<0 && max<0 ? this.setState({apartmentList:apartments}):
-        min<0 && max>0 ? apartments.map((apartment,i)=>{apartment.price <= max && filteredList.push(apartment);}):
-        min>0 && max<0 ? apartments.map((apartment,i)=>{apartment.price >= min && filteredList.push(apartment);}):
-            apartments.map((apartment,i)=>{apartment.price <= max && apartment.price >= min && filteredList.push(apartment);});
-        this.setState({apartmentList:filteredList});
+    filterByNumber = (typeStr, type, apartmentList) => {
+        type[0] <= 0 && type[1] > 0 ? apartmentList = apartmentList.filter((apartment) => apartment[typeStr] <= type[1])
+            :
+            type[0] > 0 && type[1] <= 0 ? apartmentList = apartmentList.filter((apartment) => apartment[typeStr] >= type[0])
+                :
+                apartmentList = apartmentList.filter((apartment) => apartment[typeStr] <= type[1] && apartment[typeStr] >= type[0]);
+        return apartmentList;
+    };
+
+    searchByNumber = (min, max, type) => {
+        console.log(type + " " + min + " " + max);
+        type === "price" ?
+            this.setState({price: [min, max]})
+            :
+            type === "number_of_beds" ?
+                this.setState({number_of_beds: [min, max]})
+                :
+                type === "number_of_rooms" &&
+                this.setState({number_of_rooms: [min, max]})
+
     };
 
     searchByText = () => {
-        let filteredList = [];
         const value = document.getElementById('search').value.toLowerCase();
-        for (let i = 0; i<apartments.length;i++){
-            const city = cities.find(city => city.id===apartments[i].cityId).label.toLowerCase();
-            if (apartments[i].address.toLocaleLowerCase().includes(value)||city.includes(value)){
-                filteredList.push(apartments[i]);
-            }
-            console.log(filteredList);
-            this.setState({apartmentList:filteredList});
-        }
+        this.setState({searchValue: value});
     };
 
-    searchFunc=(apartment)=>{
-        const value = document.getElementById('search').value;
-        if (apartment.address.includes(value)){
-            return true;
-        }
-
-        // const city = cities.map(city => city.id === apartment.cityId &&  city.label);
-        return cities.includes(value);
-
-    }
 
 }
 

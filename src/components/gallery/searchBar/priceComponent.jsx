@@ -35,7 +35,7 @@ export default class PriceComponent extends Component {
                 <DropdownMenu style={{width: "285px", paddingTop: 0, top: "3px"}}>
                     <Dropdown.Header style={DropdownHeader}>Price range</Dropdown.Header>
                     <Container fluid={true}>
-                        <Form onSubmit={() => this.onMaxSubmit()}>
+
                         <Row>
                             <Col xs={6} style={{position: "relative"}}>
                                 <span style={Dollar}>$</span>
@@ -48,7 +48,8 @@ export default class PriceComponent extends Component {
                                 <PriceUl>
                                     {show && minPriceList.map((price, i) =>
                                         <PriceLi data-val={minPriceList[i][1]}
-                                                 onClick={(e) => this.onPickMin(e.target.getAttribute("data-val"))}>
+                                                 onClick={(e) => this.onPickMin(e.target.getAttribute("data-val"))}
+                                                 key={i}>
                                             {minPriceList[i][0]}
                                         </PriceLi>)}
                                 </PriceUl>
@@ -68,14 +69,13 @@ export default class PriceComponent extends Component {
                                 }}/>
                                 <PriceUl>
                                     {!show && maxPriceList.map((price, i) =>
-                                        <DropdownItem as={PriceLi} data-val={maxPriceList[i][1]}
+                                        <DropdownItem as={PriceLi} key={i} data-val={maxPriceList[i][1]}
                                                       onClick={(e) => this.onPickMax(e.target.getAttribute("data-val"))}>
                                             {maxPriceList[i][0]}
                                         </DropdownItem>)}
                                 </PriceUl>
                             </Col>
                         </Row>
-                        </Form>
                     </Container>
                 </DropdownMenu>
             </Dropdown>
@@ -89,29 +89,26 @@ export default class PriceComponent extends Component {
 
     onPickMax(value) {
         this.setState({maxPrice: value, haveFilter: true});
-        this.state.searchByPrice(this.state.minPrice,value);
+        this.state.searchByPrice(this.state.minPrice/1000000,value/1000000,"price");
     };
 
     minCustomUpdate = (v) => {
+        // eslint-disable-next-line no-useless-escape
         v = v.replace(/\,/g, '');
         const min = isNaN(v) || v==="" ? "": parseInt(v);
         this.setState({minPrice: min});
     };
 
     maxCustomUpdate = (v) => {
+        // eslint-disable-next-line no-useless-escape
         v = v.replace(/\,/g, '');
         const max = isNaN(v) || v === "" ? "" : parseInt(v);
         this.setState({maxPrice: max});
     };
 
     onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
-        // 'keypress' event misbehaves on mobile so we track 'Enter' key via 'keydown' event
         if (event.key === 'Enter') {
-            // event.preventDefault();
-            // event.stopPropagation();
-            // this.onSubmit();
-            this.state.searchByPrice(this.state.minPrice,this.state.maxPrice);
-
+            this.state.searchByPrice(this.state.minPrice,this.state.maxPrice,"price");
         }
     }
 }

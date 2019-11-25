@@ -13,7 +13,8 @@
   height: 48px;
   margin: 5px;
   border: 1px solid transparent;
-  border-radius: 50px; }
+  border-radius: 50px;
+  cursor: pointer; }
   .radio:hover {
     color: red;
     border-color: red; }
@@ -21,3 +22,13 @@
 .checked {
   color: red !important;
   border-color: red !important; }
+
+.selector button {
+  width: 90%; }
+
+.ranger {
+  bottom: 13%;
+  border-bottom: 1px solid;
+  width: 10px;
+  position: absolute;
+  left: 46%; }

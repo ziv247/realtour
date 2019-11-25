@@ -2,23 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/cardStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/numberFormatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app_data/servelCall.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/homaPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/homePageStyle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app_data/apatments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_data/apatments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app_data/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_data/cities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app_data/apatments.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/gallery/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/filterbarStyle.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\homePage" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery\searchBar" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\header" />
@@ -111,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572515691598</updated>
       <workItem from="1572515693253" duration="15352000" />
-      <workItem from="1572599622425" duration="117558000" />
+      <workItem from="1572599622425" duration="167142000" />
     </task>
     <task id="LOCAL‎00001" summary="initial commit and push">
       <created>1572515830202</created>
@@ -143,7 +142,13 @@
       <option name="presentableId" value="LOCAL‎00005" />
       <updated>1573138295917</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎00006" summary="SearchBar - beds &amp; baths build">
+      <created>1573632887048</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1573632887048</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +175,8 @@
     <MESSAGE value=" build nav menu" />
     <MESSAGE value="Navbar - Done!" />
     <MESSAGE value="SearchBar - price - done" />
-    <option name="LAST_COMMIT_MESSAGE" value="SearchBar - price - done" />
+    <MESSAGE value="SearchBar - beds &amp; baths build" />
+    <option name="LAST_COMMIT_MESSAGE" value="SearchBar - beds &amp; baths build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

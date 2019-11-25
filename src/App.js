@@ -8,6 +8,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import HomePage from "./components/homePage/homaPage";
 
 class App extends React.Component {
     render() {
@@ -16,13 +17,9 @@ class App extends React.Component {
                 <div>
                     <Header/>
                     <Switch>
-                        <Route path="/search">
-                            <Gallery/>
-                        </Route>
-
-                        <Route path="/">
-                            <Home/>
-                        </Route>
+                        <Route path="/search/:searchValue" component={Gallery} />
+                        <Route path="/search" component={Gallery} />
+                        <Route path="/" exact component={HomePage}/>
                     </Switch>
 
                 </div>
@@ -30,11 +27,7 @@ class App extends React.Component {
         )
     }
 }
-function Home() {
-    return (
 
-        <Link to="/search">Search</Link>
-    );
-}
+
 
 export default App;

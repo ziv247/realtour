@@ -4,6 +4,7 @@ import "./header.css"
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {headerData} from '../../app_data/headerData';
 import NavbarItem from "./NavbarItem";
+import {Link} from "react-router-dom";
 
 
 
@@ -14,7 +15,7 @@ class Header extends React.Component{
                 <Navbar expand="lg">
                     <Container>
 
-                    <Navbar.Brand href="#home"><Logo/></Navbar.Brand>
+                    <Navbar.Brand><Link to="/"><Logo/></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
