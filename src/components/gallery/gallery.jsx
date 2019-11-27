@@ -10,73 +10,51 @@ import {
 } from "react-bootstrap";
 import PriceComponent from "./searchBar/priceComponent";
 import RoomsFilter from "./searchBar/rooms";
-import {getDataFromSever} from "../../app_data/servelCall";
+import {fullApartmentList, fullCitiesList, getApartments, getCities, getDataFromSever} from "../../app_data/servelCall";
 
 
-class Gallery extends React.Component {
+export default class Gallery extends React.Component {
 
     constructor(props) {
 
         super(props);
         this.state = {
-            citiesList: [],
-            apartmentList: [],
+            citiesList: fullCitiesList,
+            apartmentList: fullApartmentList,
             searchValue: "",
             price: [0, 0],
             number_of_beds: [0, 0],
             number_of_rooms: [0, 0],
-            loading:false
+            loading: false
         };
-        getDataFromSever("apartments", this.handleSuccessApartment);
-        getDataFromSever("cities", this.handleSuccessCities);
+
+        console.log(getApartments());
+        console.log(getCities());
         if (props.location.aboutProps) {
             console.log("Success: ", props.location.aboutProps)
         }
     }
 
+
     handleSuccessApartment = (apartments) => {
         this.setState({apartmentList: apartments});
+
     };
 
     handleSuccessCities = (cities) => {
-        this.setState({citiesList: cities,loading:true});
+        this.setState({citiesList: cities, loading: true});
     };
 
-componentDidMount() {
-    const {match:{params}} = this.props;
-    this.setState({searchValue:params.searchValue})
-    console.log(params);
-}
+    componentDidMount() {
+        const {match: {params}} = this.props;
+        this.setState({searchValue: params.searchValue});
+        this.handleSuccessApartment(fullApartmentList);
+        this.handleSuccessCities(fullCitiesList);
+    }
 
     render() {
-        let {apartmentList, citiesList, searchValue, price, number_of_beds, number_of_rooms} = this.state;
-
-        if (searchValue && this.state.loading ) {
-            let filteredList = [];
-            for (let i = 0; i < this.state.apartmentList.length; i++) {
-                // eslint-disable-next-line no-loop-func
-                // debugger;
-                let city = citiesList.find(c => c.id === apartmentList[i].cityId);
-                city = city.label.toLowerCase();
-                if (apartmentList[i].address.toLocaleLowerCase().includes(searchValue) || city.includes(searchValue)) {
-                    filteredList.push(this.state.apartmentList[i]);
-                }
-            }
-            apartmentList = filteredList;
-        }
-
-        if (price[0] > 0 || price[1] > 0) {
-            apartmentList = this.filterByNumber("price", price, apartmentList);
-        }
-
-        if (number_of_beds[0] > 0 || number_of_beds[1] > 0) {
-            apartmentList = this.filterByNumber("number_of_beds", number_of_beds, apartmentList);
-        }
-
-        if (number_of_rooms[0] > 0 || number_of_rooms[1] > 0) {
-            apartmentList = this.filterByNumber("number_of_rooms", number_of_rooms, apartmentList);
-        }
-
+        let {apartmentList} = this.state;
+        apartmentList = this.mainFilter(apartmentList);
 
         return (
             <Container fluid={true}>
@@ -140,6 +118,35 @@ componentDidMount() {
     };
 
 
+    mainFilter(apartmentList) {
+        let {citiesList, searchValue, price, number_of_beds, number_of_rooms} = this.state;
+
+        if (searchValue && this.state.loading) {
+            let filteredList = [];
+            for (let i = 0; i < this.state.apartmentList.length; i++) {
+                // eslint-disable-next-line no-loop-func
+                let city = citiesList.find(c => c.id === apartmentList[i].cityId);
+                city = city.label.toLowerCase();
+                if (apartmentList[i].address.toLocaleLowerCase().includes(searchValue) || city.includes(searchValue)) {
+                    filteredList.push(this.state.apartmentList[i]);
+                }
+            }
+            apartmentList = filteredList;
+        }
+
+        if (price[0] > 0 || price[1] > 0) {
+            apartmentList = this.filterByNumber("price", price, apartmentList);
+        }
+
+        if (number_of_beds[0] > 0 || number_of_beds[1] > 0) {
+            apartmentList = this.filterByNumber("number_of_beds", number_of_beds, apartmentList);
+        }
+
+        if (number_of_rooms[0] > 0 || number_of_rooms[1] > 0) {
+            apartmentList = this.filterByNumber("number_of_rooms", number_of_rooms, apartmentList);
+        }
+        return apartmentList
+
+    }
 }
 
-export default Gallery;

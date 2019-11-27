@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae834767-d335-491e-8aa4-011fdf345b82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app_data/servelCall.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/homaPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/homePageStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/house_login_web.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/login/login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/login/loginStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/login/loginStyle.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/singleApartment/apartment.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/singleApartment/single_apartment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/singleApartment/single_apartment.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/loader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/loader.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app_data/apatments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app_data/servelCall.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app_data/servelCall.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/gallery/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/gallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/rooms.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gallery/searchBar/searchFilterStyle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/NavbarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/homaPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/homaPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/card.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -66,6 +69,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\singleApartment" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\homePage" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery\searchBar" />
       <recent name="C:\Users\ziv24\WebstormProjects\realtour\src\components\gallery" />
@@ -110,7 +114,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572515691598</updated>
       <workItem from="1572515693253" duration="15352000" />
-      <workItem from="1572599622425" duration="167142000" />
+      <workItem from="1572599622425" duration="167172000" />
+      <workItem from="1574758108392" duration="26776000" />
     </task>
     <task id="LOCAL‎00001" summary="initial commit and push">
       <created>1572515830202</created>
@@ -148,7 +153,13 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1573632887048</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎00007" summary="SearchBar - beds &amp; baths build">
+      <created>1574688249182</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1574688249182</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,8 +195,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/gallery/searchBar/priceComponent.jsx</url>
           <line>84</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/gallery/gallery.jsx</url>
+          <line>20</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

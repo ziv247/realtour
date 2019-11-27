@@ -49,14 +49,7 @@ export default class HomePage extends Component{
     }
 
     onSearchClick(e) {
-        // const value = document.getElementById('main_search').value.toLowerCase();
-        this.setState({searchValue: e.target.value},console.log(e.target.value));    }
+        this.setState({searchValue: e.target.value});    }
 }
 
 
-// style={{width:"100%",
-//     backgroundImage:'url("https://static.rdc.moveaws.com/images/hero/nyc/hp-hero-ny-desktop.jpg")',
-//     height:"500px",
-//     minHeight:"400px"}}
-
-// document.getElementById('main_search').value.toLowerCase()

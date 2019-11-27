@@ -29,12 +29,16 @@
 .cardWrap {
   padding: 0 8px;
   margin-bottom: 16px;
+  color: #333333;
+  &:hover{
+    color: #333333;
+    text-decoration: none;
+  }
 }
 
 .left_green {
   background-color: green;
   color: white;
-  font-weight: bold;
   font-size: 11px;
   padding: 2px 4px;
   font-weight: 700;
