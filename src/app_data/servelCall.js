@@ -1,53 +1,42 @@
-let fullApartmentList, fullCitiesList;
+import Builder from './builder';
 
-
-function loadData(onSuccess) {
-    getDataFromSever("apartments", fullApartmentList, onSuccess);
+function getApartments(country = "", city = "", minPrice = -1, maxPrice = -1, minNumRooms = -1, maxNumRooms = -1, minNumBaths = -1, maxNumBaths = -1, status = "", type = "", page = 1, size = 10) {
+    const url = Builder.allApartment(1, 10)
+        .byCountry(country)
+        .byCity(city)
+        .byPrice(minPrice, maxPrice)
+        .numOfRooms(minNumRooms, maxNumRooms)
+        .numOfBath(minNumBaths, maxNumBaths)
+        .saleStatus(status)
+        .propertyType(type)
+        .build();
+    console.log(url);
+    const promise = new Promise((res, reg) => {
+        fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((myJson) => {
+                console.log(myJson);
+                res(myJson);
+            });
+    });
+    return promise
 }
 
-function getDataFromSever(type, list, onSuccess) {
-    fetch(`https://storage.googleapis.com/realtour/${type}-rt.json`, {
-            method: 'GET',
-        }
-    ).then(response => response.json()
-    ).then(success => {
-            list = success;
-            console.log(list);
-            if (type === "apartments") {
-                getDataFromSever("cities", fullCitiesList, onSuccess);
-                fullApartmentList = success;
-            }
-            if (type === "cities") {
-                fullCitiesList = success;
-                onSuccess();
-            }
-
-
-        }
-    ).catch(error => console.log(error));
+function getApartmentById(apartmentId) {
+    const url = `http://localhost:3000/apartments/${apartmentId}`
+    const promise = new Promise((res, reg) => {
+        fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((myJson) => {
+                console.log(myJson);
+                res(myJson);
+            });
+    });
+    return promise
 }
 
-
-function getApartments() {
-    return fullApartmentList;
-}
-
-
-function getCities() {
-    return fullCitiesList;
-}
-
-
-function getApartmentByID(id) {
-    return fullApartmentList.find(apartment => apartment.id == id)
-}
-
-function getCityByID(id) {
-    const ct = fullCitiesList.find(city => city.id == id);
-    console.log(ct)
-    return ct
-
-}
-
-
-export {loadData, getCities, getApartments, getApartmentByID,getCityByID, fullApartmentList, fullCitiesList}
+export { getApartments, getApartmentById }

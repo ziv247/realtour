@@ -10,16 +10,16 @@ import {
 } from "react-router-dom";
 import HomePage from "./components/homePage/homaPage";
 import Apartment from "./components/singleApartment/apartment";
-import {fullApartmentList, getApartments, loadData} from "./app_data/servelCall";
+import { fullApartmentList, getApartments, loadData } from "./app_data/servelCall";
 import Login from "./components/login/login";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false
+            loading: true
         };
-        loadData(this.onSuccess);
+        // loadData(this.onSuccess);
     }
 
     render() {
@@ -27,17 +27,17 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Header/>
-                    <Login/>
+                    <Header />
+
                     {this.state.loading
                         ?
 
                         <Switch>
-                            <Route path="/search/:searchValue" component={Gallery}/>
-                            <Route path="/search" component={Gallery}/>
-                            <Route path="/singleApartment/:id" component={Apartment}/>
-                            <Route path="/singleApartment" component={Apartment}/>
-                            <Route path="/" exact component={HomePage}/>
+                            <Route path="/search/:searchValue" component={Gallery} />
+                            <Route path="/search" component={Gallery} />
+                            <Route path="/singleApartment/:id" component={Apartment} />
+                            <Route path="/singleApartment" component={Apartment} />
+                            <Route path="/" exact component={HomePage} />
                         </Switch>
                         :
                         <div className="loader">Loading...</div>}
@@ -47,8 +47,8 @@ class App extends React.Component {
         )
     }
 
-     onSuccess=()=> {
-        this.setState({loading:true},() => console.log(getApartments()));
+    onSuccess = () => {
+        this.setState({ loading: true }, () => console.log(getApartments()));
 
     }
 }
