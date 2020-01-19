@@ -24,8 +24,8 @@ export default class Gallery extends React.Component {
       apartmentList: [],
       searchValue: "",
       price: [0, 0],
-      number_of_beds: [0, 0],
-      number_of_rooms: [0, 0],
+      number_of_room: [0, 0],
+      number_of_bath: [0, 0],
       loading: false
     };
 
@@ -52,6 +52,11 @@ export default class Gallery extends React.Component {
 
     console.log(this.state.apartmentList);
   }
+  searchByNumber = (min, max, type) => {
+    type == "price" && this.setState({ price: [min, max] });
+    type == "bath" && this.setState({ number_of_bath: [min, max] });
+    type == "bed" && this.setState({ number_of_room: [min, max] });
+  };
 
   render() {
     let { apartmentList } = this.state;
@@ -79,7 +84,7 @@ export default class Gallery extends React.Component {
               <RoomsFilter type={"Bath"} searchByPrice={this.searchByNumber} />
               {["Property Type", "More Filters"].map(variant => (
                 <PriceComponent
-                  searchByPrice={this.searchByNumber}
+                  searchByPrice={this.searchByPrice}
                   key={variant + 1}
                 />
               ))}
