@@ -6,21 +6,21 @@ class apartmentBuilder {
         this.size = size;
         this.params = [];
         this.isFirst = true;
-        this.url = `http://localhost:3000/apartments/?`;
+        this.params = '';
     }
 
     _addAddChar() {
         if (this.isFirst) {
             this.isFirst = false;
         } else {
-            this.url += "&"
+            this.params += "&"
         }
     }
 
     byCountry(country) {
         if (country) {
             this._addAddChar();
-            this.url += `country=${country}`
+            this.params += `country=${country}`
         }
         return this
     }
@@ -28,14 +28,14 @@ class apartmentBuilder {
     byCity(city) {
         if (city) {
             this._addAddChar();
-            this.url += `city=${city}`;
+            this.params += `city=${city}`;
         }
         return this
     }
     byPrice(minPrice, maxPrice) {
         if (minPrice !== -1 || maxPrice !== -1) {
             this._addAddChar();
-            this.url += `price=${minPrice || -1}-${maxPrice || -1}`;
+            this.params += `price=${minPrice || -1}-${maxPrice || -1}`;
         }
         return this
     }
@@ -43,7 +43,7 @@ class apartmentBuilder {
     numOfRooms(minNumRooms, maxNumRooms) {
         if (minNumRooms !== -1 || maxNumRooms !== -1) {
             this._addAddChar();
-            this.url += `numOfRooms=${minNumRooms}-${maxNumRooms}`;
+            this.params += `numOfRooms=${minNumRooms}-${maxNumRooms}`;
         }
         return this
     }
@@ -51,7 +51,7 @@ class apartmentBuilder {
     numOfBath(minNumBaths, maxNumBaths) {
         if (minNumBaths !== -1 || maxNumBaths !== -1) {
             this._addAddChar();
-            this.url += `numOfBaths=${minNumBaths}-${maxNumBaths}`;
+            this.params += `numOfBaths=${minNumBaths}-${maxNumBaths}`;
         }
         return this
     }
@@ -59,7 +59,7 @@ class apartmentBuilder {
     saleStatus(status) {
         if (status) {
             this._addAddChar();
-            this.url += `status=${status}`;
+            this.params += `status=${status}`;
         }
         return this
     }
@@ -67,15 +67,15 @@ class apartmentBuilder {
     propertyType(type) {
         if (type) {
             this._addAddChar();
-            this.url += `status=${type}`;
+            this.params += `status=${type}`;
         }
         return this
     }
 
     build() {
         this._addAddChar();
-        this.url += `page=${this.page}`;
-        return this.url;
+        this.params += `page=${this.page}`;
+        return this.params;
     }
 }
 
