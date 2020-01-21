@@ -11,13 +11,15 @@ export default class RoomsFilter extends Component {
       checked: "any",
       min: 0,
       max: 0,
-      type: props.type
+      type: props.type,
+      haveFilter: false
     };
   }
 
   render() {
-    const { type, searchByPrice: searchByNumber } = this.props;
-
+    const { type } = this.props;
+    const { haveFilter, min, max } = this.state;
+    const rooms = [1, 2, 3, 4, 5];
     return (
       <Dropdown>
         <Dropdown.Toggle
@@ -25,7 +27,8 @@ export default class RoomsFilter extends Component {
           id="dropdown-basic"
           style={{ margin: "16px 6px 16px 0px" }}
         >
-          {type}
+          {haveFilter && `${min == 0 ? "0" : min}${max == 0 ? "+" : "-" + max}`}
+          {haveFilter ? type + "s" : type}
         </Dropdown.Toggle>
 
         <DropdownMenu
@@ -33,6 +36,16 @@ export default class RoomsFilter extends Component {
         >
           <Dropdown.Header style={DropdownHeader}>
             {type + "rooms"}
+            <button
+              onClick={this.onReset}
+              style={{
+                float: "right",
+                border: "0",
+                backgroundColor: "transparent"
+              }}
+            >
+              reset
+            </button>
           </Dropdown.Header>
           <Container fluid={true}>
             <Dropdown.Item>
@@ -41,7 +54,7 @@ export default class RoomsFilter extends Component {
                   className={"radio checked"}
                   id={"any"}
                   data-value={"0"}
-                  onClick={e => this.onCheck(e, searchByNumber)}
+                  onClick={this.onReset}
                 >
                   Any
                 </Col>
@@ -49,7 +62,7 @@ export default class RoomsFilter extends Component {
                   className={"radio"}
                   id={type + "1"}
                   data-value={"1"}
-                  onClick={e => this.onCheck(e, searchByNumber)}
+                  onClick={this.onCheck}
                 >
                   1+
                 </Col>
@@ -57,7 +70,7 @@ export default class RoomsFilter extends Component {
                   className={"radio"}
                   id={type + "2"}
                   data-value={"2"}
-                  onClick={e => this.onCheck(e, searchByNumber)}
+                  onClick={this.onCheck}
                 >
                   2+
                 </Col>
@@ -65,7 +78,7 @@ export default class RoomsFilter extends Component {
                   className={"radio"}
                   id={type + "3"}
                   data-value={"3"}
-                  onClick={e => this.onCheck(e, searchByNumber)}
+                  onClick={this.onCheck}
                 >
                   3+
                 </Col>
@@ -73,7 +86,7 @@ export default class RoomsFilter extends Component {
                   className={"radio"}
                   id={type + "4"}
                   data-value={"4"}
-                  onClick={e => this.onCheck(e, searchByNumber)}
+                  onClick={this.onCheck}
                 >
                   4+
                 </Col>
@@ -86,13 +99,11 @@ export default class RoomsFilter extends Component {
                 style={{ border: "1px solid" }}
                 onChange={event => this.onPickMin(event.target.value)}
               >
-                <option disabled={true}>From</option>
+                <option value={0}>From</option>
                 <option value={""}>Studio</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                {rooms.map(num => (
+                  <option value={num}>{num}</option>
+                ))}
               </select>
 
               <div className={"ranger"} />
@@ -100,17 +111,14 @@ export default class RoomsFilter extends Component {
               <select
                 className={"btn"}
                 style={{ border: "1px solid" }}
-                onChange={event =>
-                  this.onPickMax(event.target.value, type, searchByNumber)
-                }
+                onChange={event => this.onPickMax(event.target.value, type)}
               >
-                <option disabled={true}>To</option>
-                <option>Studio</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option value={0}>To</option>
+                {rooms
+                  .filter(num => num >= min)
+                  .map(num => (
+                    <option value={num}>{num}</option>
+                  ))}
               </select>
             </Row>
           </Container>
@@ -119,34 +127,50 @@ export default class RoomsFilter extends Component {
     );
   }
 
-  onCheck = (e, searchFunc) => {
-    // debugger;
+  onCheck = e => {
     let type = this.state.type;
     if (type === "Bed") {
-      type = "number_of_beds";
+      type = "number_of_room";
     } else if (type === "Bath") {
-      type = "number_of_rooms";
+      type = "number_of_bath";
     }
     document.getElementById(e.target.id).classList.add("checked");
     document.getElementById(this.state.checked).classList.remove("checked");
-    this.setState({ checked: e.target.id });
-    console.log(e.target.getAttribute("data-value"));
-    this.setState({ min: e.target.getAttribute("data-value") });
+    this.setState({
+      checked: e.target.id,
+      min: e.target.getAttribute("data-value"),
+      max: 0,
+      haveFilter: true
+    });
 
-    searchFunc(e.target.getAttribute("data-value"), 0, type);
+    this.props.searchByNumber(e.target.getAttribute("data-value"), 0, type);
   };
 
   onPickMin = value => {
-    this.setState({ min: value });
+    this.setState({ min: value, haveFilter: true });
   };
 
-  onPickMax = (value, type, searchFunc) => {
-    this.setState({ max: value });
+  onPickMax = (value, type) => {
+    this.setState({ max: value, haveFilter: true });
     if (type === "Bed") {
-      type = "number_of_beds";
+      type = "number_of_room";
     } else if (type === "Bath") {
-      type = "number_of_rooms";
+      type = "number_of_bath";
     }
-    searchFunc(this.state.min, value, type);
+    console.log(
+      "Inside min: ",
+      this.state.min,
+      " max: ",
+      value,
+      " type: ",
+      type
+    );
+    this.props.searchByNumber(this.state.min, value, type);
+  };
+
+  onReset = e => {
+    e.preventDefault();
+    this.setState({ min: 0, max: 0, haveFilter: false });
+    this.props.searchByNumber(0, 0, this.state.type);
   };
 }

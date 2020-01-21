@@ -59,15 +59,25 @@ export default class PriceComponent extends Component {
           style={{ margin: "16px 6px 16px 0px" }}
         >
           {haveFilter
-            ? `${nFormatter(this.state.minPrice)}-${nFormatter(
-                this.state.maxPrice
-              )}`
+            ? `${minPrice === -1 ? "0" : nFormatter(minPrice)}${
+                maxPrice == -1 ? "+" : "-" + nFormatter(this.state.maxPrice)
+              }`
             : "Price"}
         </Dropdown.Toggle>
 
         <DropdownMenu style={{ width: "285px", paddingTop: 0, top: "3px" }}>
           <Dropdown.Header style={DropdownHeader}>
-            Price range<button>reset</button>
+            Price range
+            <button
+              onClick={this.onReset}
+              style={{
+                float: "right",
+                border: "0",
+                backgroundColor: "transparent"
+              }}
+            >
+              reset
+            </button>
           </Dropdown.Header>
           <Container fluid={true}>
             <Row>
@@ -129,18 +139,29 @@ export default class PriceComponent extends Component {
                 />
                 <PriceUl>
                   {!show &&
-                    maxPriceList.map((price, i) => (
-                      <DropdownItem
-                        as={PriceLi}
-                        key={i}
-                        data-val={maxPriceList[i][1]}
-                        onClick={e =>
-                          this.onPickMax(e.target.getAttribute("data-val"))
-                        }
-                      >
-                        {maxPriceList[i][0]}
-                      </DropdownItem>
-                    ))}
+                    maxPriceList
+                      .filter(price => price[1] >= minPrice)
+                      .map((price, i) => (
+                        <DropdownItem
+                          as={PriceLi}
+                          key={i}
+                          data-val={price[1]}
+                          onClick={e =>
+                            this.onPickMax(e.target.getAttribute("data-val"))
+                          }
+                        >
+                          {price[0]}
+                        </DropdownItem>
+                      ))}
+                  <DropdownItem
+                    as={PriceLi}
+                    data-val={-1}
+                    onClick={e =>
+                      this.onPickMax(e.target.getAttribute("data-val"))
+                    }
+                  >
+                    Any
+                  </DropdownItem>
                 </PriceUl>
               </Col>
             </Row>
@@ -160,27 +181,37 @@ export default class PriceComponent extends Component {
     this.state.searchByPrice(this.state.minPrice, value, "price");
   }
 
+  onReset = e => {
+    e.preventDefault();
+    this.setState({
+      maxPrice: -1,
+      minPrice: -1,
+      haveFilter: false
+    });
+    this.state.searchByPrice(-1, -1, "price");
+  };
+
   minCustomUpdate = v => {
-    // eslint-disable-next-line no-useless-escape
     v = v.replace(/\,/g, "");
     const min = isNaN(v) || v === "" ? "" : parseInt(v);
     this.setState({ minPrice: min });
+    this.state.searchByPrice(min, this.state.maxPrice, "price");
   };
 
   maxCustomUpdate = v => {
-    // eslint-disable-next-line no-useless-escape
     v = v.replace(/\,/g, "");
     const max = isNaN(v) || v === "" ? "" : parseInt(v);
     this.setState({ maxPrice: max });
+    this.state.searchByPrice(this.state.minPrice, max, "price");
   };
 
-  onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (event.key === "Enter") {
-      this.state.searchByPrice(
-        this.state.minPrice,
-        this.state.maxPrice,
-        "price"
-      );
-    }
-  };
+  // onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+  //   if (event.key === "Enter") {
+  //     this.state.searchByPrice(
+  //       this.state.minPrice,
+  //       this.state.maxPrice,
+  //       "price"
+  //     );
+  //   }
+  // };
 }

@@ -6,7 +6,8 @@ import { Col } from "react-bootstrap";
 import { InputGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import { registerCall, loginCall } from "../../app_data/servelCall";
+import { loginCall } from "../../app_data/servelCall";
+import { Redirect } from "react-router-dom";
 
 export default class FormLogin extends Component {
   constructor(props) {
@@ -15,9 +16,10 @@ export default class FormLogin extends Component {
       email: field({
         name: "email",
         isRequired: true,
-        pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
       }),
-      password: field({ name: "password", isRequired: true, minLength: 6 })
+      password: field({ name: "password", isRequired: true, minLength: 6 }),
+      isLogged: false
     };
   }
 
@@ -37,6 +39,7 @@ export default class FormLogin extends Component {
     let isOK = true;
 
     for (let prop in this.state) {
+      if (prop === "isLogged") continue;
       const field = this.state[prop];
       const errors = validate(prop, field.value, field.validations);
       if (errors.length) {
@@ -54,18 +57,18 @@ export default class FormLogin extends Component {
       const result = {};
 
       for (let prop in this.state) {
+        if (prop === "isLogged") continue;
         result[this.state[prop].name] = this.state[prop].value;
       }
 
       loginCall(result)
         .then(response => {
-          console.log("response: ", response);
-          if (response.status == 200) {
-            window.location.reload();
-            // console.log();
+          if (response.status === 200) {
+            this.props.onUserLogin();
+            // this.setState({ isLogged: true });
           } else {
             const errors = this.state.email.errors;
-            errors.push("Email in system, please insert ");
+            // errors.push("Email in system, please insert ");
             this.setState({
               email: {
                 ...this.state.email,
@@ -80,7 +83,10 @@ export default class FormLogin extends Component {
   };
 
   render() {
-    return (
+    const { isLogged } = this.state;
+    return isLogged ? (
+      <Redirect to={"/search"} />
+    ) : (
       <>
         <div>
           <h4 className="alert-heading text-center">Login</h4>

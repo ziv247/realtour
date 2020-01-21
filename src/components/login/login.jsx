@@ -17,6 +17,7 @@ export default class Login extends Component {
 
   render() {
     const { toggleRegister } = this.state;
+    const { onUserLogin, onToggleLogin } = this.props;
     return (
       <div>
         <div className="loginMainContainer">
@@ -24,7 +25,7 @@ export default class Login extends Component {
             type="button"
             id="closeIcon"
             className="closeBtn"
-            onClick={this.props.onToggleLogin}
+            onClick={onToggleLogin}
           >
             <span aria-hidden="true">
               <i className="fas fa-times" />
@@ -33,7 +34,11 @@ export default class Login extends Component {
           <div>
             <div data-testid="login" className="sc-fzXfLR bAzGHq d-flex">
               <div className="sc-fzXfMA kyBnvO">
-                {toggleRegister ? <FormRegister /> : <FormLogin />}
+                {toggleRegister ? (
+                  <FormRegister onUserLogin={onUserLogin} />
+                ) : (
+                  <FormLogin onUserLogin={onUserLogin} />
+                )}
               </div>
               <div className="sc-fzXfLU bAzGHt">
                 <div className="sc-fzXfLV bAzGHu">

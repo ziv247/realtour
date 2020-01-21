@@ -20,7 +20,7 @@ class apartmentBuilder {
     byCountry(country) {
         if (country) {
             this._addAddChar();
-            this.params += `country=${country}`
+            this.params += `country=${country.id}`
         }
         return this
     }
@@ -28,30 +28,43 @@ class apartmentBuilder {
     byCity(city) {
         if (city) {
             this._addAddChar();
-            this.params += `city=${city}`;
+            this.params += `city=${city.id}`;
         }
         return this
     }
     byPrice(minPrice, maxPrice) {
-        if (minPrice !== -1 || maxPrice !== -1) {
+        if (minPrice !== -1) {
             this._addAddChar();
-            this.params += `price=${minPrice || -1}-${maxPrice || -1}`;
+            this.params += `minPrice=${minPrice}`;
+        }
+        if (maxPrice !== -1) {
+            this._addAddChar();
+            this.params += `maxPrice=${maxPrice}`;
         }
         return this
     }
 
     numOfRooms(minNumRooms, maxNumRooms) {
-        if (minNumRooms !== -1 || maxNumRooms !== -1) {
+        if (minNumRooms !== 0) {
             this._addAddChar();
-            this.params += `numOfRooms=${minNumRooms}-${maxNumRooms}`;
+            this.params += `minNumRooms=${minNumRooms}`;
         }
+        if (maxNumRooms !== 0) {
+            this._addAddChar();
+            this.params += `maxNumRooms=${maxNumRooms}`;
+        }
+
         return this
     }
 
     numOfBath(minNumBaths, maxNumBaths) {
-        if (minNumBaths !== -1 || maxNumBaths !== -1) {
+        if (minNumBaths !== 0) {
             this._addAddChar();
-            this.params += `numOfBaths=${minNumBaths}-${maxNumBaths}`;
+            this.params += `minNumBaths=${minNumBaths}`;
+        }
+        if (maxNumBaths !== 0) {
+            this._addAddChar();
+            this.params += `maxNumBaths=${maxNumBaths}`;
         }
         return this
     }
