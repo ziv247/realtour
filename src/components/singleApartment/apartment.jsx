@@ -6,7 +6,6 @@ import { getApartmentById } from "../../app_data/servelCall";
 export default class Apartment extends Component {
   constructor(props) {
     super(props);
-    console.log(props.match.params.id);
     this.state = {
       apartmentId: props.match.params.id,
       apartment: null,
@@ -16,33 +15,28 @@ export default class Apartment extends Component {
 
   async componentDidMount() {
     const result = await getApartmentById(this.state.apartmentId);
-    console.log(result[0]);
-    this.setState(
-      { apartment: result[0], laoding: false },
-      console.log(this.state.apartment)
-    );
+    this.setState({ apartment: result[0], laoding: false });
   }
 
   render() {
     const { laoding } = this.state;
-    console.log(laoding);
     if (!laoding) {
       const {
-        id,
-        user_id,
+        // id,
+        // user_id,
         address,
-        city_id,
+        // city_id,
         price,
-        number_of_room,
-        number_of_bath,
-        sqft,
-        created_on,
-        description,
-        sale_status,
-        availability,
-        property_type,
-        main_image,
-        status,
+        // number_of_room,
+        // number_of_bath,
+        // sqft,
+        // created_on,
+        // description,
+        // sale_status,
+        // availability,
+        // property_type,
+        // main_image,
+        // status,
         images,
         city_name
       } = this.state.apartment;
@@ -63,7 +57,7 @@ export default class Apartment extends Component {
                 <img
                   className="d-block w-100"
                   src={`http://localhost:3000/${image}`}
-                  alt={`${i + 1}# Image`}
+                  alt={`${i + 1}# `}
                 />
               </Carousel.Item>
             ))}

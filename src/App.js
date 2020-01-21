@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Gallery from "./components/gallery/gallery";
+import UserPage from "./components/user/UserPage";
 import Header from "./components/header/header";
 import './style/loader.css'
 import {
@@ -10,8 +11,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./components/homePage/homaPage";
 import Apartment from "./components/singleApartment/apartment";
-import { fullApartmentList, getApartments, loadData } from "./app_data/servelCall";
-import Login from "./components/login/login";
+import PrivateRoute from './components/PrivateRoute';
 
 class App extends React.Component {
     constructor(props) {
@@ -35,6 +35,7 @@ class App extends React.Component {
                         <Switch>
                             <Route path="/search/:searchValue" component={Gallery} />
                             <Route path="/search" component={Gallery} />
+                            <PrivateRoute path="/user" component={UserPage} />
                             <Route path="/singleApartment/:id" component={Apartment} />
                             <Route path="/singleApartment" component={Apartment} />
                             <Route path="/" exact component={HomePage} />
@@ -48,7 +49,7 @@ class App extends React.Component {
     }
 
     onSuccess = () => {
-        this.setState({ loading: true }, () => console.log(getApartments()));
+        this.setState({ loading: true });
 
     }
 }

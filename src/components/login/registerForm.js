@@ -7,7 +7,6 @@ import { InputGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { registerCall } from '../../app_data/servelCall';
-import { Cookies } from 'js-cookie'
 
 export default class FormRegister extends Component {
 
@@ -18,7 +17,7 @@ export default class FormRegister extends Component {
             lastName: field({ name: 'last_name', isRequired: true, minLength: 2 }),
             username: field({ name: 'username', isRequired: true, minLength: 2 }),
             password: field({ name: 'password', isRequired: true, minLength: 6 }),
-            email: field({ name: 'email', isRequired: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })
+            email: field({ name: 'email', isRequired: true, pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ })
         }
 
     }
@@ -65,13 +64,11 @@ export default class FormRegister extends Component {
             //Send the data somewhere
             registerCall(result)
                 .then(response => {
-                    console.log("response: ", response);
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         window.location.reload();
-                        // console.log();
                     } else {
                         const errors = this.state.email.errors;
-                        errors.push("Email in system, please insert ")
+                        errors.push("Email already exists")
                         this.setState({
                             email: {
                                 ...this.state.email,

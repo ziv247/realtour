@@ -7,30 +7,28 @@ import {
   ApartmentType,
   GreenApartmentTitle
 } from "./cardStyle";
-import { cities } from "../../app_data/cities";
 import { Link } from "react-router-dom";
 
 class Card extends React.Component {
   render() {
     const {
       id,
-      user_id,
+      // user_id,
       address,
-      city_id,
+      // city_id,
       price,
       number_of_room,
       number_of_bath,
       sqft,
-      created_on,
+      // created_on,
       description,
       sale_status,
-      availability,
+      // availability,
       property_type,
       main_image,
-      status,
+      // status,
       city_name
     } = this.props.apartment;
-    // console.log(apartment);
     return (
       <Link
         to={`/singleApartment/${id}`}
@@ -49,7 +47,7 @@ class Card extends React.Component {
             <GreenApartmentTitle>{description}</GreenApartmentTitle>
             <ApartmentDetail>
               <ApartmentType>{`${property_type} for ${
-                sale_status != "both" ? sale_status : "Sale & Rent"
+                sale_status !== "both" ? sale_status : "Sale & Rent"
               }`}</ApartmentType>
               <ApartmentPrice>
                 ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
