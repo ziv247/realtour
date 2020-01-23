@@ -2,10 +2,7 @@ import React, { Component } from "react";
 
 import validate, { field } from "./validator";
 import InputErrors from "./inputErrors";
-import { Col } from "react-bootstrap";
-import { InputGroup } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { InputGroup, Form, Button, Col } from "react-bootstrap";
 import { loginCall } from "../../app_data/servelCall";
 import { Redirect } from "react-router-dom";
 
@@ -77,7 +74,7 @@ export default class FormLogin extends Component {
             });
           }
         })
-        .catch(error => {});
+        .catch(console.error);
       // registerCall(result);
     }
   };

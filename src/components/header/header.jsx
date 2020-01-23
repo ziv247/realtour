@@ -61,7 +61,7 @@ class Header extends React.Component {
               <Nav className="mr-auto">
                 <Nav.Link href="#home">Home</Nav.Link>
                 <Nav.Link href="/search">Buy</Nav.Link>
-                <Nav.Link href="/user/myapartments">Sell</Nav.Link>
+                <Nav.Link href="/user">Sell</Nav.Link>
               </Nav>
               <Nav className="ml-auto">
                 <Nav.Link href="#home">
