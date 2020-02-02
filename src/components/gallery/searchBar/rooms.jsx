@@ -27,7 +27,8 @@ export default class RoomsFilter extends Component {
           id="dropdown-basic"
           style={{ margin: "16px 6px 16px 0px" }}
         >
-          {haveFilter && `${min == 0 ? "0" : min}${max == 0 ? "+" : "-" + max}`}
+          {haveFilter &&
+            `${min === "0" ? "0" : min}${max === "0" ? "+" : "-" + max}`}
           {haveFilter ? type + "s" : type}
         </Dropdown.Toggle>
 

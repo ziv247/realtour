@@ -1,0 +1,22 @@
+.containerUser {
+  height: auto !important;
+  box-shadow: 0px 0px 3px 1px;
+  transition: all 2s linear;
+  background-color: ghostwhite !important;
+  overflow: hidden;
+  margin: 16px 0;
+  border-radius: 0.25rem;
+  padding: 0px 10px 10px;
+  & .containerHeader {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  & .toggleBtn {
+    border: 0;
+    background: transparent;
+  }
+}
+
+.mainHeader {
+}

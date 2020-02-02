@@ -60,7 +60,7 @@ export default class PriceComponent extends Component {
         >
           {haveFilter
             ? `${minPrice === -1 ? "0" : nFormatter(minPrice)}${
-                maxPrice == -1 ? "+" : "-" + nFormatter(this.state.maxPrice)
+                maxPrice === -1 ? "+" : "-" + nFormatter(this.state.maxPrice)
               }`
             : "Price"}
         </Dropdown.Toggle>
@@ -192,14 +192,14 @@ export default class PriceComponent extends Component {
   };
 
   minCustomUpdate = v => {
-    v = v.replace(/\,/g, "");
+    v = v.replace(/,/g, "");
     const min = isNaN(v) || v === "" ? "" : parseInt(v);
     this.setState({ minPrice: min });
     this.state.searchByPrice(min, this.state.maxPrice, "price");
   };
 
   maxCustomUpdate = v => {
-    v = v.replace(/\,/g, "");
+    v = v.replace(/,/g, "");
     const max = isNaN(v) || v === "" ? "" : parseInt(v);
     this.setState({ maxPrice: max });
     this.state.searchByPrice(this.state.minPrice, max, "price");

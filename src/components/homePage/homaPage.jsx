@@ -8,6 +8,7 @@ import {
 } from "react-bootstrap";
 import { MainDiv, MainP, NavLi, NavUl } from "./homePageStyle";
 import { Link } from "react-router-dom";
+import { Section } from "../../style/Section";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -34,40 +35,29 @@ export default class HomePage extends Component {
             Get Pre-Approved
           </Button>
         </Container>
-        <div style={{ width: "100%", position: "relative" }}>
-          <Image
-            src="https://static.rdc.moveaws.com/images/hero/nyc/hp-hero-ny-desktop.jpg"
-            fluid
-            style={{ width: "100%", minHeight: "400px" }}
-          />
-          <MainDiv className="container">
+        <Section>
+          {/* <div style={{ width: "100%", position: "relative" }}> */}
+          <Container
+            style={{
+              textAlign: "center",
+              padding: "16px"
+            }}
+          >
             <h1 style={{ fontSize: "3.5em" }}>The Home of Home Search℠</h1>
             <MainP>
               With the most complete source of homes for sale & real estate near
               you
             </MainP>
-            <NavUl>
-              <NavLi>BUY</NavLi>
-              <NavLi>RENT</NavLi>
-              <NavLi>JUST SOLD</NavLi>
-              <NavLi>HOME VALUE</NavLi>
-            </NavUl>
-            <InputGroup style={{ marginRight: "6px" }}>
-              <FormControl
-                placeholder="New York, NYC"
-                id={"main_search"}
-                onChange={e => this.onSearchClick(e)}
-              />
-              <InputGroup.Append>
-                <Link to={`/search/${this.state.searchValue}`}>
-                  <Button variant="danger" onClick={e => this.onSearchClick(e)}>
-                    <i className="fas fa-search" />
-                  </Button>
-                </Link>
-              </InputGroup.Append>
-            </InputGroup>
-          </MainDiv>
-        </div>
+
+            <Link to={`/search`}>
+              <Button variant="danger" onClick={e => this.onSearchClick(e)}>
+                <i className="fas fa-search" />
+                <span>SEARCH</span>
+              </Button>
+            </Link>
+          </Container>
+          {/* </div> */}
+        </Section>
       </div>
     );
   }

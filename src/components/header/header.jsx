@@ -2,8 +2,6 @@ import React from "react";
 import Logo from "./logo";
 import "./header.css";
 import { Container, Nav, Navbar, Dropdown } from "react-bootstrap";
-import { headerData } from "../../app_data/headerData";
-import NavbarItem from "./NavbarItem";
 import { Link } from "react-router-dom";
 import Login from "../login/login";
 import Cookies from "js-cookie";

@@ -1,0 +1,39 @@
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -10;
+}
+.imageBox {
+  background-color: lightgray;
+  width: 100%;
+  height: 135px;
+  margin: 16px 0;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid lightgray;
+  cursor: pointer;
+
+  &:hover .imageBoxHover {
+    opacity: 1;
+  }
+}
+.imageBoxHover {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: whitesmoke;
+  border-radius: 0.25rem;
+  transition: all 0.5s linear;
+}

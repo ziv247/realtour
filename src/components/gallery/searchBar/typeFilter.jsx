@@ -14,7 +14,6 @@ export default class TypeFilter extends Component {
   }
 
   render() {
-    const { onChooseType } = this.props;
     const { haveFilter, checked } = this.state;
     return (
       <Dropdown>

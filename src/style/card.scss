@@ -4,6 +4,7 @@
 }
 
 .card {
+  box-shadow: 0px 0px 4px darkred;
   ul {
     display: flex;
     margin: 0;
@@ -15,6 +16,7 @@
   }
   &-body {
     padding: 12px 16px 16px;
+    height: 18vh;
   }
 }
 
@@ -24,13 +26,11 @@
   margin-right: 2px;
 }
 
-
-
 .cardWrap {
   padding: 0 8px;
   margin-bottom: 16px;
   color: #333333;
-  &:hover{
+  &:hover {
     color: #333333;
     text-decoration: none;
   }
@@ -61,6 +61,6 @@
 
 .cardImageWrap {
   position: relative;
-  height: 35vh;
+  height: 22vh;
   overflow: hidden;
 }

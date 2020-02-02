@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-import { ButtonToolbar, Container, Form, Button } from "react-bootstrap";
+import { ButtonToolbar, Container, Form, Button, Col } from "react-bootstrap";
 import PriceComponent from "./searchBar/priceComponent";
 import RoomsFilter from "./searchBar/rooms";
 import CountryComponent from "./searchBar/countriesComponent";
@@ -13,6 +13,7 @@ import {
   getCityByCountryId
 } from "../../app_data/servelCall";
 import NoResultComponent from "./searchBar/noResultComponent";
+import { Section } from "../../style/Section";
 
 export default class Gallery extends React.Component {
   constructor(props) {
@@ -138,65 +139,73 @@ export default class Gallery extends React.Component {
     } = this.state;
 
     return (
-      <Container fluid={true}>
-        <div>
-          {reRender && (
-            <Form inline>
-              <ButtonToolbar>
-                <CountryComponent
-                  countries={countries}
-                  country={country}
-                  setCountry={this.setCountry}
-                />
-                {cities.length > 0 && (
-                  <CitiesComponent
-                    cities={cities}
-                    city={city}
-                    setCity={this.setCity}
+      <div>
+        <Container>
+          <div>
+            {reRender && (
+              <Form inline>
+                <ButtonToolbar>
+                  <CountryComponent
+                    countries={countries}
+                    country={country}
+                    setCountry={this.setCountry}
                   />
-                )}
-                <PriceComponent searchByPrice={this.searchByNumber} />
-                <RoomsFilter
-                  type={"Bed"}
-                  searchByNumber={this.searchByNumber}
-                />
-                <RoomsFilter
-                  type={"Bath"}
-                  searchByNumber={this.searchByNumber}
-                />
-                <TypeFilter onChooseType={this.onChooseType} />
-              </ButtonToolbar>
-              <Button
-                variant="danger"
-                style={{ margin: "16px 6px 16px 0px" }}
-                onClick={() => {
-                  this.search();
-                }}
-              >
-                <i className="fas fa-search" />
-              </Button>
-              <Button
-                variant="secondary"
-                style={{ margin: "16px 6px 16px 0px" }}
-                onClick={() => {
-                  this.reset();
-                }}
-              >
-                Reset
-              </Button>
-            </Form>
-          )}
-        </div>
-        <div className={"row"}>
-          {apartmentList.length < 1 ? (
-            <NoResultComponent reset={this.reset} />
-          ) : (
-            apartmentList.map((apartment, i) => (
-              <Card apartment={apartment} key={i} />
-            ))
-          )}
-        </div>
-      </Container>
+                  {cities.length > 0 && (
+                    <CitiesComponent
+                      cities={cities}
+                      city={city}
+                      setCity={this.setCity}
+                    />
+                  )}
+                  <PriceComponent searchByPrice={this.searchByNumber} />
+                  <RoomsFilter
+                    type={"Bed"}
+                    searchByNumber={this.searchByNumber}
+                  />
+                  <RoomsFilter
+                    type={"Bath"}
+                    searchByNumber={this.searchByNumber}
+                  />
+                  <TypeFilter onChooseType={this.onChooseType} />
+                </ButtonToolbar>
+                <Button
+                  variant="danger"
+                  style={{ margin: "16px 6px 16px 0px" }}
+                  onClick={() => {
+                    this.search();
+                  }}
+                >
+                  <i className="fas fa-search" />
+                </Button>
+                <Button
+                  variant="secondary"
+                  style={{ margin: "16px 6px 16px 0px" }}
+                  onClick={() => {
+                    this.reset();
+                  }}
+                >
+                  Reset
+                </Button>
+              </Form>
+            )}
+          </div>
+        </Container>
+        <Section>
+          <Container>
+            <div className={"row"}>
+              {apartmentList.length < 1 ? (
+                <NoResultComponent reset={this.reset} />
+              ) : (
+                apartmentList.map((apartment, i) => (
+                  <Col sm={6} md={4} lg={3}>
+                    <Card apartment={apartment} key={i} />
+                  </Col>
+                ))
+              )}
+            </div>
+          </Container>
+        </Section>
+      </div>
     );
   }
 }

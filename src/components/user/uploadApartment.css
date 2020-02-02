@@ -1,0 +1,19 @@
+.containerUser {
+  height: auto !important;
+  -webkit-box-shadow: 0px 0px 3px 1px;
+  box-shadow: 0px 0px 3px 1px;
+  -webkit-transition: all 2s linear;
+  -o-transition: all 2s linear;
+  transition: all 2s linear;
+  background-color: ghostwhite !important;
+  overflow: hidden;
+  margin: 16px 0;
+  border-radius: 0.25rem;
+  padding: 0px 10px 10px; }
+  .containerUser .containerHeader {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500; }
+  .containerUser .toggleBtn {
+    border: 0;
+    background: transparent; }
